@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 187 100% 38%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 47% 11%;
+    
+    --radius: 0.5rem;
+    
+    /* Custom WaveGuard colors */
+    --safe: 142 81% 45%;
+    --caution: 37 97% 51%;
+    --unsafe: 0 84% 60%;
+  }
+  
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 210 100% 50%;
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 187 100% 38%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom utility classes for safety statuses */
+.status-safe {
+  @apply bg-[#22C55E]/10 text-[#22C55E];
+}
+
+.status-caution {
+  @apply bg-[#F59E0B]/10 text-[#F59E0B];
+}
+
+.status-unsafe {
+  @apply bg-[#EF4444]/10 text-[#EF4444];
+}
+
+.border-status-safe {
+  @apply border-l-4 border-[#22C55E];
+}
+
+.border-status-caution {
+  @apply border-l-4 border-[#F59E0B];
+}
+
+.border-status-unsafe {
+  @apply border-l-4 border-[#EF4444];
+}
+
+/* For the map and leaflet integration */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.user-location-marker div {
+  background-color: #4285F4;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.beach-marker-safe div {
+  background-color: #22C55E;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.beach-marker-caution div {
+  background-color: #F59E0B;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.beach-marker-unsafe div {
+  background-color: #EF4444;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.leaflet-popup-content {
+  margin: 0.5rem;
+}
+
+.popup-content h3 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.popup-content .status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.popup-content .view-details-btn {
+  background-color: #1E88E5;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
